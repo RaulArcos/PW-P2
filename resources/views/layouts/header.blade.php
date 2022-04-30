@@ -22,16 +22,15 @@
         
     .navbar-custom 
     {
-      background-color:#ff8000 ;
+      background-color:#0081B5 ;
     }
     .footer-custom
     {
-      background-color:#ff8000 ;
+      background-color:#0081B5 ;
     }
   </style>
     
-  <title>INŒVATION eShop</title>
-
+  <title>PWComponentes eShop</title>
 <!-- NAVBAR-->
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -69,8 +68,8 @@
   <header class="navbar-custom py-5">
     <div class="container px-4 px-lg-5 my-2">
       <div class="text-center text-white">
-        <h1 class="display-4 fw-bolder">INŒVATION</h1>
-        <p class="lead fw-normal text-white-50 mb-0">Tu tienda de INE Nº1 en Innovación</p>
+        <h1 class="display-4 fw-bolder">PWComponentes</h1>
+        <p class="lead fw-normal text-white-50 mb-0">Si compras aquí no te llega seguro.</p>
       </div>
     </div>
   </header>
