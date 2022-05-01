@@ -9,6 +9,7 @@
     ?>
 
 <head>
+  <link href="{{ asset('css/custompw.css') }}" rel="stylesheet" />
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">      
   <link rel="stylesheet" href="/css/bootstrap.min.css"/>
@@ -33,7 +34,7 @@
   <title>PWComponentes eShop</title>
 <!-- NAVBAR-->
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-light colorpropiopw">
     <div class="container px-4 px-lg-5">
       <a class="navbar-brand" href="/">INICIO</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>

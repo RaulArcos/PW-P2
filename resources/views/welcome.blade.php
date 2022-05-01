@@ -1,135 +1,72 @@
 @extends('templates.master')
-
+<link href="{{ asset('css/custompw.css') }}" rel="stylesheet" />
     <!-- CENTRAL CONTENT --> 
     @section('content-center')
-    <?php $iCont = 0; $iNumRow = 1;?>
-    @foreach ($aProduct_offering as $product)
-    
-    <?php if($iCont > 3):?>
-        <div class="row">
-        <?php $iCont=0; $iNumRow++;
-        else: $iCont++; ?>
-    <?php endif; ?>
 
-        <div class="col-sm-3">
-        <div class="card border-0">
-            <div class="product-image">
-                <a href="/product/{{ $product->id }}">
-                    <img class="pic-1" style="max-width:100%;" src= {{ $product->imgurl}}>
-                </a>
-            </div>
-            <div class="product-content">
-                <h3 class="title"><a>{{ $product->name }} </a></h3>
-                    <div class="price"> 
-                    <h5 class="title"><a>{{ $product->price - $product->price*($product->discountPercent/100) }} €</a></h5>
-                        <p><small><del>{{ $product->price }} €</del> - {{$product->discountPercent}}% de descuento</small></p>
-                    </div>
-            </div>
-        </div>
-    </div>
-    <?php if($iNumRow > 0 && $iCont == 0):?>
-        </div>
-    <?php endif; ?>
-
-   @endforeach
-    <h3 class="h3">Nuevos productos</h3>
     <?php $iCont2 = 0; $iNumRow2 = 1;?>
     @foreach ($aProduct_new as $product)
-     <?php if($iCont2 > 3):?>
+    <?php if($iCont2 > 3):?>
+        <br></br><br></br>
         <div class="row">
         <?php $iCont2=0; $iNumRow2++;
         else: $iCont2++; ?>
     <?php endif; ?>
     @if( $product->HasDiscount()== true)
     <div class="col-sm-3">
-        <div class="card border-0">
-            <div class="product-image">
-                <a href="/product/{{ $product->id }}">
-                    <img class="pic-1" style="max-width:100%;" src= {{ $product->imgurl}}>
-                </a>
-            </div>
-            <div class="product-content">
-                <h3 class="title"><a>{{ $product->name }} </a></h3>
-                    <div class="price"> 
-                    <h5 class="title"><a>{{ $product->price - $product->price*($product->discountPercent/100) }} €</a></h5>
-                        <p><small><del>{{ $product->price }} €</del> - {{$product->discountPercent}}% de descuento</small></p>
-                    </div>
-            </div>
-        </div>
+        <div class="container">
+            <div class="cardpw">
+                <div class="imgBx">
+                    <img src="https://assets.codepen.io/4164355/shoes.png">
+                </div>
+                <div class="contentBx">
+                    <h2>{{ $product->name }}</h2>
+                    <div class="size">
+                        <h3>Size :</h3>
+        <span>7</span>
+        <span>8</span>
+        <span>9</span>
+        <span>10</span>
+      </div>
+      <div class="color">
+        <h3>Color :</h3>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <a href="#">Buy Now</a>
+    </div>
+  </div>
+</div>
     </div>
     
     @else
     <div class="col-sm-3">
-        <div class="card border-0">
-            <div class="product-image">
-                <a href="/product/{{ $product->id }}">
-                    <img class="pic-1" style="max-width:100%;" src= {{ $product->imgurl}}>
-                </a>
-            </div>
-            <div class="product-content">
-                <h3 class="title"><a>{{ $product->name }} </a></h3>
-                    <div class="price"> 
-                    <h5 class="title"><a>{{ $product->price }} €</a></h5>
-                    </div>
-            </div>
-        </div>
+    <div class="container">
+  <div class="cardpw">
+    <div class="imgBx">
+      <img src="{{ $product->imgurl }}">
+    </div>
+    <div class="contentBx">
+      <h2>{{ $product->name }}</h2>
+      <br><br>
+
+      <div class="size">
+      
+      <h3>Precio: {{ $product->price }} €</h3>
+      </div>
+      <br>
+      <a href="/product/{{ $product->id }}">Ver Producto</a>
+    </div>
+    </div>
+    </div>
     </div>
     @endif
+    
     <?php if($iNumRow2 > 0 && $iCont2 == 0):?>
         </div>
     <?php endif; ?>
     @endforeach
     @endsection
-
-    <!-- RIGHT CONTENT --> 
-    @section('content-right')
-           
-        <div class="col-sm-8 mx-auto">
-            <div class="card border-0">
-                <div class="product-image">
-                    <a href="/product/{{ $product->id }}">
-                        <img class="img-responsive" style="max-width:80%;" src="Imagenes/juegoconsola.png">
-                    </a>
-                </div>
-                <div class="product-content">
-                    <h6 class="title"><a>60.00€</a></h6>
-                </div>
-            </div>
-        </div> 
-        <div class="col-sm-8 mx-auto">
-            <div class="card border-0">
-                <div class="product-image">
-                    <a href="#">
-                        <img class="img-responsive" style="max-width:80%;" src="Imagenes/juegoconsola.png">
-                    </a>
-                </div>
-                <div class="product-content">
-                    <h6 class="title"><a>60.00€</a></h6>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-8 mx-auto">
-            <div class="card border-0">
-                <div class="product-image">
-                    <a href="#">
-                        <img class="img-responsive" style="max-width:80%;" src="Imagenes/juegoconsola.png">
-                    </a>
-                </div>
-                <div class="product-content">
-                    <h6 class="title"><a>60.00€</a></h6>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-8 mx-auto">
-            <div class="card border-0">
-                <div class="product-image">
-                    <a href="#">
-                        <img class="img-responsive" style="max-width:80%;" src="Imagenes/juegoconsola.png">
-                    </a>
-                </div>
-                <div class="product-content">
-                    <h6 class="title"><a>60.00€</a></h6>
-                </div>
-            </div>
-        </div>
+    @section('right-content')
+    
     @endsection

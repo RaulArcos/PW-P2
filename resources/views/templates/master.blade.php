@@ -8,7 +8,6 @@
         <div class="row">
             <div class="col-9">
                 <div class="container-flow" style="margin-top:50px;margin-left:30px">
-                    <h3 class="h3">Ofertas del día</h3>
                     <div class="row">
                         @yield('content-center')
                     </div> 
