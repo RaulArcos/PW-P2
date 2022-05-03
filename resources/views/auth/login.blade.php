@@ -1,6 +1,6 @@
 @extends('templates.login_master')
 @section('content-center')
-        <x-jet-validation-errors class="mb-4" />
+<x-jet-validation-errors class="mb-4" />
 
         @if (session('status'))
             <div class="mb-4 font-medium text-sm text-green-600">
@@ -36,7 +36,7 @@
                 @endif
                 <br><br>
                 <x-jet-button class="ml-4">
-                    {{ __('Log in') }}
+                    {{ __('Inicia sesion') }}
                 </x-jet-button>
             </div>
         </form>
