@@ -24,13 +24,22 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 Route::get('/product/{product}',
- [ProductController::class, 'show'])->name('product.show');
+[ProductController::class, 'show'])->name('product.show');
 
-Route::get('/addToCart/{product}','App\Http\Controllers\ProductController@addToCart')
- ->name('cart.add');
+Route::middleware(['auth:sanctum', 'verified'])->get('/addToCart/{product}','App\Http\Controllers\ProductController@addToCart')
+->name('cart.add');
 
- Route::get('/cart',
- [CartController::class, 'show'])->name('cart.show');
+Route::middleware(['auth:sanctum', 'verified'])->get('/cart',
+[CartController::class, 'show'])->name('cart.show');
 
- Route::get('/cart/{operation}/{product}','App\Http\Controllers\CartController@operation')
- ->name('cart.operation');
+Route::get('/cart/{operation}/{product}','App\Http\Controllers\CartController@operation')
+->name('cart.operation');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/prueba', 'App\Http\Controllers\ProductController@prueba_auth')->name('prueba');
+
+/*
+    Os explico como va el tema del login a través de jetstream, simplmente donde haga falta que el usuario este verificado
+    ponemos Route::middleware(['auth:sanctum', 'verified'])-> [metodo http]-> ....
+    Se ve como ejemplo la ruta de prueba 
+    Lo he puesto en la ruta de gestion del carrito
+*/

@@ -25,4 +25,10 @@ class ProductController extends Controller
         $request->session()->put('Cart', $Cart);
         return redirect()->back()->with('success', 'El producto ha sido añadido al carro.');
     }
+
+    //Funcion de prueba para ver si esta autenticado
+    public function prueba_auth(){
+        return "<h1>Prueba</h1>";
+    }
+
 }
