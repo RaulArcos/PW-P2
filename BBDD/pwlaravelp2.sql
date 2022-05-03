@@ -68,7 +68,7 @@ CREATE TABLE `failed_jobs` (
 CREATE TABLE `libro` (
   `Titulo` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `Id_Libro` int(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `libro`
