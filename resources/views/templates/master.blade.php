@@ -6,14 +6,14 @@
 
         <!-- CENTER AND RIGHT CONTENT -->
         <div class="row">
-            <div class="col-9">
+            <div class="col-12">
                 <div class="container-flow" style="margin-top:50px;margin-left:30px">
                     <div class="row">
                         @yield('content-center')
                     </div> 
                 </div>
             </div>
-
+<!--
             <div class="col-3 ">
                 <div class="container-flow"style="margin-top:50px;margin-left:30px ">
                     <h3 class="text-center">Lo más vendido</h3>
@@ -22,6 +22,7 @@
                     </div>     
                 </div> 
             </div>
+-->
         </div>
 
         <!-- Loading Javascripts -->   
