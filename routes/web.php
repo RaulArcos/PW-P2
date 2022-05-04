@@ -37,6 +37,19 @@ Route::get('/cart/{operation}/{product}','App\Http\Controllers\CartController@op
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/prueba', 'App\Http\Controllers\ProductController@prueba_auth')->name('prueba');
 
+Route::middleware(['auth:sanctum', 'verified'])->get('/admin', 'App\Http\Controllers\AdminController@index')
+->name('adm_index');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/admin/new_prod', 'App\Http\Controllers\AdminController@new_prod')
+->name('new_prod');
+
+Route::middleware(['auth:sanctum', 'verified'])->post('/admin/new_prod', 'App\Http\Controllers\AdminController@store')
+->name('store_prod');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/adm_prueba', 'App\Http\Controllers\AdminController@prueba')
+->name('adm_prueba');
+
+
 /*
     Os explico como va el tema del login a través de jetstream, simplmente donde haga falta que el usuario este verificado
     ponemos Route::middleware(['auth:sanctum', 'verified'])-> [metodo http]-> ....
