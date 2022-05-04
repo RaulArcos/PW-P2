@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 30-04-2022 a las 09:53:28
+-- Tiempo de generación: 04-05-2022 a las 09:21:59
 -- Versión del servidor: 8.0.17
 -- Versión de PHP: 8.0.11
 
@@ -163,10 +163,10 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`id`, `company_id`, `name`, `description`, `imgurl`, `price`, `discountPercent`, `discountStart_at`, `discountEnd_at`, `created_at`, `updated_at`) VALUES
-(1, 1, 'LG GRAM 14\" 2018', 'i5-8250u, 8GB RAM DDR4', 'https://img.pccomponentes.com/articles/28/281231/lg-gram-14z90n-intel-core-i5-1035g7-8gb-256gb-ssd-14.jpg', 899.00, '20', '2021-10-17 18:51:13', '2021-12-30 18:51:13', '2021-10-18 14:58:25', '2021-10-05 14:58:25'),
-(2, 3, 'Ryzen 5 3600 4.2GHz', NULL, 'https://thumb.pccomponentes.com/w-530-530/articles/21/213019/5-3.jpg', 237.00, NULL, NULL, '2021-10-19 18:41:18', '2021-12-31 15:21:50', '2021-10-25 14:31:59'),
-(4, 2, 'Xiaomi Mi 11i 5G Negro', NULL, 'https://thumb.pccomponentes.com/w-530-530/articles/39/394962/193-xiaomi-mi-11i-5g-8-128gb-negro-libre.jpg', 656.00, '17', '2021-10-25 18:24:24', '2021-12-31 18:24:24', '2021-10-25 14:32:10', '2021-10-25 14:32:10'),
-(5, NULL, 'Oppo A16 4/64Gb Azul Libre', NULL, 'https://thumb.pccomponentes.com/w-530-530/articles/47/478954/1998-oppo-a16-4-64gb-azul-libre-d7fe6a80-9113-4203-8f5f-08ce731f896e.jpg', 169.00, NULL, NULL, '2021-10-19 18:41:18', '2021-10-25 14:32:10', '2021-10-25 14:32:10');
+(1, 1, 'LG GRAM 14\" 2018', 'i5-8250u, 8GB RAM DDR4', 'imagenes/lggram.png', 899.00, '20', '2021-10-17 18:51:13', '2021-12-30 18:51:13', '2021-10-18 14:58:25', '2021-10-05 14:58:25'),
+(2, 3, 'Ryzen 5 3600', NULL, 'imagenes/ryzen-5.png', 237.00, NULL, NULL, '2021-10-19 18:41:18', '2021-12-31 15:21:50', '2021-10-25 14:31:59'),
+(4, 2, 'Xiaomi Mi 11i 5G', NULL, 'imagenes/xiaomi11t.png', 656.00, '17', '2021-10-25 18:24:24', '2021-12-31 18:24:24', '2021-10-25 14:32:10', '2021-10-25 14:32:10'),
+(5, NULL, 'Oppo A16 4/64Gb', NULL, 'imagenes/oppoa16.png', 169.00, NULL, NULL, '2021-10-19 18:41:18', '2021-10-25 14:32:10', '2021-10-25 14:32:10');
 
 -- --------------------------------------------------------
 
@@ -188,7 +188,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('GFqunIFh0EYuujQ3f2t1sPTneLJGu6bmlAxNNA07', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.41 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiY3Nxb1h2VGNhOVliSzMwVmNjaEdxeXk5M2NQZWVYMUtPMmplZkhzdyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NDoiQ2FydCI7TzoxNToiQXBwXE1vZGVsc1xDYXJ0IjozMTp7czo1OiJhSXRlbSI7YToxOntpOjU7YTo1OntzOjI6ImlkIjtpOjU7czo0OiJuYW1lIjtzOjI2OiJPcHBvIEExNiA0LzY0R2IgQXp1bCBMaWJyZSI7czo2OiJpbWd1cmwiO3M6MTMzOiJodHRwczovL3RodW1iLnBjY29tcG9uZW50ZXMuY29tL3ctNTMwLTUzMC9hcnRpY2xlcy80Ny80Nzg5NTQvMTk5OC1vcHBvLWExNi00LTY0Z2ItYXp1bC1saWJyZS1kN2ZlNmE4MC05MTEzLTQyMDMtOGY1Zi0wOGNlNzMxZjg5NmUuanBnIjtzOjU6InByaWNlIjtkOjE2OTtzOjg6InF1YW50aXR5IjtpOjE7fX1zOjExOiJpVG90YWxJdGVtcyI7aToxO3M6MTE6ImRUb3RhbFByaWNlIjtkOjcxMy40ODtzOjEzOiIAKgBjb25uZWN0aW9uIjtOO3M6ODoiACoAdGFibGUiO047czoxMzoiACoAcHJpbWFyeUtleSI7czoyOiJpZCI7czoxMDoiACoAa2V5VHlwZSI7czozOiJpbnQiO3M6MTI6ImluY3JlbWVudGluZyI7YjoxO3M6NzoiACoAd2l0aCI7YTowOnt9czoxMjoiACoAd2l0aENvdW50IjthOjA6e31zOjE5OiJwcmV2ZW50c0xhenlMb2FkaW5nIjtiOjA7czoxMDoiACoAcGVyUGFnZSI7aToxNTtzOjY6ImV4aXN0cyI7YjowO3M6MTg6Indhc1JlY2VudGx5Q3JlYXRlZCI7YjowO3M6MTM6IgAqAGF0dHJpYnV0ZXMiO2E6MDp7fXM6MTE6IgAqAG9yaWdpbmFsIjthOjA6e31zOjEwOiIAKgBjaGFuZ2VzIjthOjA6e31zOjg6IgAqAGNhc3RzIjthOjA6e31zOjE3OiIAKgBjbGFzc0Nhc3RDYWNoZSI7YTowOnt9czo4OiIAKgBkYXRlcyI7YTowOnt9czoxMzoiACoAZGF0ZUZvcm1hdCI7TjtzOjEwOiIAKgBhcHBlbmRzIjthOjA6e31zOjE5OiIAKgBkaXNwYXRjaGVzRXZlbnRzIjthOjA6e31zOjE0OiIAKgBvYnNlcnZhYmxlcyI7YTowOnt9czoxMjoiACoAcmVsYXRpb25zIjthOjA6e31zOjEwOiIAKgB0b3VjaGVzIjthOjA6e31zOjEwOiJ0aW1lc3RhbXBzIjtiOjE7czo5OiIAKgBoaWRkZW4iO2E6MDp7fXM6MTA6IgAqAHZpc2libGUiO2E6MDp7fXM6MTE6IgAqAGZpbGxhYmxlIjthOjA6e31zOjEwOiIAKgBndWFyZGVkIjthOjE6e2k6MDtzOjE6IioiO319fQ==', 1651312400);
+('SCaHhrqUwiBRyWEOONY4EUM9j0eBdBx61ovGaKPo', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoidll1V0VkRTBpM1hLQjBPT2lpRTlQV0RNTHNuN1p1c3l0TUswbHlndyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzE6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9wcm9kdWN0LzEiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1651656080);
 
 -- --------------------------------------------------------
 
