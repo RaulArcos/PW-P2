@@ -1,6 +1,16 @@
 @extends('templates.login_master')
 @section('content-center')
 
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
 <title>Nuevo Producto</title>
 
 <h2>Insertar artículo</h2>
@@ -31,12 +41,15 @@
 <label for="price">Precio del producto:</label>
 <br>
 <input type="text" name="price" value="0.00"/>
+<br><br>
+<!-- Label para insertar la dirección de la imagen -->
+<label for="imgurl">Inserte la direccion donde se almacena la imagen</label>
+<br><br>
+<input type="text" name="imgurl" value="url"/>
 
 <br /> <br/>
 <button type="submit" class='btn btn-primary'>Crear Articulo</button>
 
 <!-- Cerramos el formulario -->
 </form>
-
-
 @endsection
