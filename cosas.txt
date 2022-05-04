@@ -1,6 +1,5 @@
 Cositas para hacer en la aplicación:
 
 	-Cambiar el estilo de la página con otro CSS. --> Raul
-	-Sistema de usuario (perfil) y administrador (crud de los productos). --> Roldan
+	-Sistema de usuario (perfil) y administrador (crud de los productos). Parte pedidos --> Roldan
 	-Sistema de pedidos (una vez con tu carrito, haces el pedido y eliges el tipo de envio). --> Luis
-	-Historia de pedidos en el pefil. --> Luis

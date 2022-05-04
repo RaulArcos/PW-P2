@@ -7,6 +7,8 @@ use App\Models\Cart;
 use App\Models\Product;
 use PhpParser\Node\Expr\Cast\String_;
 
+use App\Http\Requests\OrderRequest;
+
 class CartController extends Controller
 {
     public function show(Request $request){

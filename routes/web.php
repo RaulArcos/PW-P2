@@ -29,8 +29,14 @@ Route::get('/product/{product}',
 Route::middleware(['auth:sanctum', 'verified'])->get('/addToCart/{product}','App\Http\Controllers\ProductController@addToCart')
 ->name('cart.add');
 
+Route::middleware(['auth:sanctum', 'verified'])->get('/removeAll','App\Http\Controllers\ProductController@removeAll')
+->name('cart.removeAll');
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/cart',
 [CartController::class, 'show'])->name('cart.show');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/order',
+[OrderController::class, 'show'])->name('order.show');
 
 Route::get('/cart/{operation}/{product}','App\Http\Controllers\CartController@operation')
 ->name('cart.operation');

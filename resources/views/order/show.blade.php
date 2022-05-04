@@ -4,15 +4,15 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Carrito</title>
+    <title>Tramitar Pedido</title>
     <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
         integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous" />
 </head>
 
 <body>
-    <div class="container">
-        <h1 class="display-4">Tu carrito</h1>
+<div class="container">
+<h1 class="display-4">Tramitar Pedido</h1>
         <hr>
 
         
@@ -23,11 +23,8 @@
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Nombre</th>
-                    <th scope="col">Foto</th>
                     <th scope="col">Precio</th>
                     <th scope="col">Cantidad</th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
                 </tr>
             </thead>
 
@@ -47,33 +44,33 @@
 
                     <td>{{$carrito['name']}}</td>
 
-                    <td><img src="{{$carrito['imgurl']}}"  style="max-width:50%;"></img></td>
-
                     <td>{{$carrito['price']}}</td>
 
                     <td>{{$carrito['quantity']}}</td>
                     
-                    <td> 
-                        <a href="{{ route('cart.operation', ['operation'=>'add', 'product'=>$product])}}">
-                            <span class="btn btn-success" type="button">+</span>
-                        </a>
-                    </td>
-                    <td>
-                        <a href="{{ route('cart.operation',['operation'=>'remove', 'product'=>$product])}}">
-                            <span class="btn btn-danger" type="button">-</span>
-                        </a>
-                    </td>
-                    <td>
-                        <a href="{{ route('cart.operation',['operation'=>'removeAll', 'product'=>$product])}}">
-                            <span class="btn btn-warning" type="button">Borrar</span>
-                        </a>
-                    </td>
             </tr>
             @endforeach     
         </table>
         @endif
-        <a href="/" class="btn btn-outline-dark">Volver Atrás</a>
-        <a href="/order" class="btn btn-outline-dark">Procesar Compra</a>
+    </div>
+    <div class="container">
+        <hr>
+        <h5>    Dirección de envío    <h5> <form method="POST"> <input type="text" name="Dirección 1"/> </form>
+        
+        <h5>    Localidad             <h5> <form method="POST"> <input type="text" name="localidad"/> </form>
+
+        <h5>    Código Postal         <h5> <form method="POST"> <input type="text" name="cp"/> </form>
+        <br></br>
+        <input type="radio" name="envio">Envío 24 horas (+7'99)<br></br>
+        <input type="radio" name="envio">Envío Estandar (+3'99)<br></br>
+        
+        <a href="/" class="btn btn-success" type="button">Pedir</a>
+
+        <a href="/cart" class="btn btn-danger" type="button">Volver Atras</a>
+
+        @php 
+            unset($_SESSION);
+        @endphp 
     </div>
     
 </body>
