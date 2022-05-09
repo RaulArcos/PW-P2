@@ -1,5 +1,6 @@
 @extends('templates.login_master')
 @section('content-center')
+<link href="{{ asset('css/custompw.css') }}" rel="stylesheet" />
 <x-jet-validation-errors class="mb-4" />
 
         @if (session('status'))
@@ -35,7 +36,7 @@
                     </a>
                 @endif
                 <br><br>
-                <x-jet-button class="ml-4">
+                <x-jet-button class="cart-btn">
                     {{ __('Inicia sesion') }}
                 </x-jet-button>
             </div>

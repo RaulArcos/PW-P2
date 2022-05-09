@@ -6,7 +6,7 @@
 
         <!-- CENTER AND RIGHT CONTENT -->
         <div class="row">
-            <div class="col-12">
+            <div class="col-11">
                 <div class="container-flow" style="margin-top:50px;margin-left:30px">
                     <div class="row">
                         @yield('content-center')
