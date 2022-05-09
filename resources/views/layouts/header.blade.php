@@ -40,14 +40,12 @@
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-              <li class="nav-item"><a class="nav-link active" aria-current="page" href="/login">Acceso Usuario</a></li>
-              </li>
+              @auth
+                <li class="nav-item"><a class="nav-link active" aria-current="page" href="/login">{{auth()->user()->name}}</a></li>
+              @else
+                <li class="nav-item"><a class="nav-link active" aria-current="page" href="/login">Inicia Sesión</a></li>
+              @endauth
             </ul>
-                    
-            <form class ="d-flex form-inline" style="margin-right:20px">
-              <input type="text" placeholder="Buscar..." name="Busqueda">
-                <button type="submit" class="btn btn-secondary" style="margin-left:3px">Buscar</button>
-            </form>
                     
             <form class="d-flex form-inline">
             <a href="/cart">

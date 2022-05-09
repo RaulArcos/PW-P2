@@ -21,6 +21,6 @@
         <!-- <script src="../../assets/js/vendor/popper.min.js"></script> -->
         <script src="js/bootstrap.min.js"></script>
         <!-- FOOTER -->
-        @include('templates.login_footer')
+        @include('layouts.footer')
     </body>
 </html>

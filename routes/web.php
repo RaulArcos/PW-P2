@@ -20,7 +20,7 @@ Route::get('/', [ProductController::class, 'welcome'])
  ->name('home');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
+    return view('profile.show');
 })->name('dashboard');
 
 Route::get('/product/{product}',
